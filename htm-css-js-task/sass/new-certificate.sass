@@ -1,0 +1,113 @@
+@import '_header'
+
+$font-stack: sans-serif, Arial, Helvetica
+$primary-color: #333
+$background-color: #f2f2f2
+
+body
+  margin: 0
+  padding: 0
+  font: 100% $font-stack
+  color: $primary-color
+  background: $background-color
+
+html, body
+  height: 100%
+  min-height: 100%
+
+.form-wrapper
+  display: flex
+  flex-direction: column
+  min-height: calc( 100vh - 60px )
+  background-color: #ffffff
+  .header
+    color: #ffffff
+    background-color: #bdbdbd
+    .section
+      height: 100%
+      width: 67%
+      margin: 0 auto
+  .body
+    display: flex
+    flex-direction: column
+    font-size: 14px
+    font-weight: 600
+    color: #969696
+    label
+      margin-bottom: 5px
+    input
+      padding: 10px 0
+      border: 1px solid #ededed
+    input[type="datetime-local"]
+      color: #656565
+      padding: 5px 0 5px 15px
+      font-size: 16px
+      font-weight: 600
+    input[type="datetime-local" i]
+      padding-right: 13px
+      color: #787878
+    input::-webkit-calendar-picker-indicator
+      color: #787878
+    input[type="file"]
+      opacity: 0
+      padding: 0
+      width: 90%
+    .custom-file-upload
+      border: 1px solid #ededed
+      display: inline-block
+      padding: 6px 12px
+      cursor: pointer
+      i
+        float: right
+    textarea
+      resize: none
+      border: 1px solid #ededed
+      height: 108px
+    select
+      color: #656565
+      font-size: 16px
+      font-weight: 600
+      border: 1px solid #ededed
+      padding: 10px 7px 10px
+      text-indent: 1px
+      appearance: none
+      background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 520px center
+
+.registration-form
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 70%
+  margin: 0 auto
+
+.column
+  flex-grow: 1
+  padding: 20px 20px
+
+.row
+  display: flex
+  flex-direction: column
+  margin-bottom: 15px
+
+.btn-group
+  padding-top: 10px
+  display: flex
+  button
+    padding: 10px 15px
+    width: 50%
+    font-weight: 600
+
+.btn-submit
+  color: #ffffff
+  border: 1px solid #6fcf97
+  background-color: #6fcf97
+
+.btn-cancel
+  margin-right: 15px
+  color: #9a9a9a
+  border: 1px solid #d9d9d9
+  background-color: #ffffff
+
+@media only screen and (min-width: 600px)
+  .column
+    padding-bottom: 0

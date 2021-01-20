@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/new-certificate.css">
+    <title>Add New Item</title>
+</head>
+
+<body>
+    <!-- Header Content -->
+    <header>
+        <div class="header-logo">
+            <a class="sidenav" href="#"><i class="material-icons">dehaze</i></a>
+            <a class="link" href="#">Logo</a>
+        </div>
+        <form class="search-form">
+            <input class="search-input placeholder" type="text" name="category" id="category"
+                placeholder="Search by item name">
+            <select class="search-category">
+                <option>All categories</option>
+                <option>Category 1</option>
+                <option>Category 2</option>
+                <option>Category 3</option>
+            </select>
+        </form>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="#"><i class="material-icons">favorite</i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="material-icons">shopping_cart</i></a>
+                </li>
+                <li class="delimeter">
+                    <a href="#">Login</a>
+                </li>
+                <li>
+                    <a href="#">Sign Up</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-wrapper">
+            <div class="header">
+                <div class="section">
+                    <h3>Add New Coupon</h3>
+                </div>
+            </div>
+            <div class="body">
+                <form class="registration-form">
+                    <div class="column">
+                        <div class="row">
+                            <label>Company</label>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <label>Category</label>
+                            <select>
+                                <option>Сategory Name</option>
+                                <option>Category 1</option>
+                                <option>Category 2</option>
+                                <option>Category 3</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label>Valid to</label>
+                            <input type="datetime-local" value="2020-12-12T02:00">
+                        </div>
+                        <div class="row">
+                            <label>Price</label>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <label>Images</label>
+                            <label class="custom-file-upload"><input type="file"><i class="material-icons">insert_photo</i></label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <label>Item Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <label>Short description</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="row">
+                            <label>Long description</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn-cancel">Back</button>
+                            <button class="btn-submit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

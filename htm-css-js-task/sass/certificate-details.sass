@@ -1,0 +1,63 @@
+@import '_header'
+
+$font-stack: sans-serif, Arial, Helvetica
+$primary-color: #333
+$background-color: #f2f2f2
+
+body
+    margin: 0
+    padding: 0
+    font: 100% $font-stack
+    color: $primary-color
+    background: $background-color
+
+html, body
+    height: 100%
+    min-height: 100%
+
+.product-details-wrapper
+    width: 90%
+    margin: 40px auto 0
+    display: flex
+    flex-direction: column
+
+.product-short-description
+    display: flex
+    flex-direction: row
+    margin-bottom: 20px
+
+.product-image
+    margin-right: 40px
+    background-color: #e0e0e0
+    width: 70%
+
+.product-description
+    background: #ffffff
+    padding: 0 20px
+    width: 30%
+    h2
+        color: #1e1e1e
+    p
+        color: #8b8b8b
+    span
+        color: #b5b5b5
+        font-size: 14px
+    h4
+        color: #797979
+        margin: 5px 0
+    .cart
+        display: flex
+        align-items: center
+        justify-content: space-between
+        a
+            cursor: pointer
+            color: #38b1f5
+            align-items: center
+            display: flex
+            i
+                color: #757575
+                margin-left: 5px
+
+.product-long-description
+    width: 67%
+    word-wrap: break-word
