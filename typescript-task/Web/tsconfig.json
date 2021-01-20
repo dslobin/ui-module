@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "removeComments": true,
+        "outDir": "js",
+        "sourceMap": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true
+    }
+}
