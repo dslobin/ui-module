@@ -205,8 +205,39 @@ function matrixMultiplication(matrix1, matrix2) {
  *      gather("a")("b")("c").order(2)(1)(0).get() ➞ "cba"
  *      gather("e")("l")("o")("l")("!")("h").order(5)(0)(1)(3)(2)(4).get()  ➞ "hello"
  */
-function gather(str) {
 
+const EXCLAMATION_MARK = '!';
+
+function gather(str) {
+    const tempStr = [str];
+    const resultStr = [];
+
+    function getAddResult() {
+        return str;
+    }
+
+    function add(newStr) {
+        tempStr.push(newStr);
+        return add;
+    }
+
+    function order(index) {
+        const searchedStr = tempStr[index];
+        if (EXCLAMATION_MARK !== searchedStr) {
+            resultStr.push(searchedStr);
+        }
+        return order;
+    }
+
+    function getOrderResult() {
+        return resultStr.join('');
+    }
+
+    add.get = getAddResult;
+    add.order = order;
+    order.get = getOrderResult;
+
+    return add;
 }
 
 // console.log('Seconds to date:');
@@ -264,4 +295,20 @@ function gather(str) {
 // console.log(matrixMultiplication(a, b));
 
 // console.log('Gather:');
-// console.log(gather('a')('b')('c').order(1)(2)(3).get());
+// console.log(
+//     gather('a')('b')('c')
+//     .order(0)(1)(2)
+//     .get()
+// );
+
+// console.log(
+//     gather('a')('b')('c')
+//     .order(2)(1)(0)
+//     .get()
+// );
+
+// console.log(
+//     gather('e')('l')('o')('l')('!')('h')
+//     .order(5)(0)(1)(3)(2)(4)
+//     .get()
+// );
