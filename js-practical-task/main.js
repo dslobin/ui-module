@@ -57,28 +57,25 @@ function toBase2Converter(decimal) {
  *      't', 'test it' -> 3
  *      'T', 'test it' -> 3
  */
+
 function substringOccurrencesCounter(substring, text) {
     text += "";
     substring += "";
-
-    if (substring.length == 0) {
-        return (text.length + 1);
+    if (substring.length === 0) {
+        return text.length + 1;
     }
-
     let repetitionsNumber = 0,
         position = 0,
         step = 1;
-
     text = text.toUpperCase();
     substring = substring.toUpperCase();
     while (true) {
         position = text.indexOf(substring, position);
-        if (position >= 0) {
-            repetitionsNumber += 1;
-            position += step;
-        } else {
+        if (position < 0) {
             break;
         }
+        repetitionsNumber += 1;
+        position += step;
     }
     return repetitionsNumber;
 }
