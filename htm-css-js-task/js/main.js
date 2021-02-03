@@ -91,14 +91,12 @@ const certificateNameInput = document.getElementById('certificateName');
 certificateNameInput.addEventListener('input', _.debounce((event) => {
     clearGiftCertificates();
     const certificateInfo = event.target.value;
-    console.log(`User input(certificate name & description): ${certificateInfo}`);
     if (certificateInfo && certificateInfo.trim().length > 0) {
         const certificates = findAllGiftCertificates();
         const filterResult = certificates.filter(c => {
             return c.name.toUpperCase().indexOf(certificateInfo.toUpperCase()) > -1 ||
                 c.description.toUpperCase().indexOf(certificateInfo.toUpperCase()) > -1
         });
-        console.log(filterResult);
         filterResult.forEach(c => addCertificateToDOM(c));
     } else if (certificateInfo.trim().length === 0) {
         const certificates = findCertificatesPaginated(DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER);
@@ -135,7 +133,6 @@ certificateCategoryInput.addEventListener('input', _.debounce((event) => {
 
 function isCategoryInputEmpty() {
     const categoryValue = certificateNameInput.value;
-    console.log(`Category input value = ${categoryValue}`);
     return categoryValue != null && categoryValue.trim().length <= 0;
 }
 
@@ -264,12 +261,6 @@ window.addEventListener('scroll', () => {
     } = document.documentElement;
 
     if (clientHeight + scrollTop >= scrollHeight - 5) {
-        console.log({
-            scrollTop,
-            scrollHeight,
-            clientHeight
-        });
-
         if (isCategoryInputEmpty()) {
             lastScrollPosition = scrollTop;
             topButton.onclick = goToLastScrollPosition;
@@ -297,7 +288,6 @@ allCategoriesButton.addEventListener('click', () => {
 
 
 /* Filter certificate categories when the user releases a key (on the keyboard) */
-// const certificateCategoryInput = document.getElementById('certificateCategory');
 const categoryDropdownElement = document.getElementById('categoryDropdown');
 const categoryLinks = categoryDropdownElement.getElementsByTagName('a');
 
